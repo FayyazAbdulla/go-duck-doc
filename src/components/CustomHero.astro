@@ -1,293 +1,662 @@
 ---
 /**
- * Full-bleed GO-DUCK splash. Registered via starlight.components.Hero.
- * Theme colors come from brand.css (:root[data-theme='light'|'dark']).
+ * GO-DUCK splash matching the product mock:
+ * copy + install on the left, terminal and service chips on the right, four steps below.
+ * Theme colors come from brand.css.
  */
+import postgresIcon from '../assets/icons/postgresql.svg';
+import mongodbIcon from '../assets/icons/mongodb.svg';
+import keycloakIcon from '../assets/icons/keycloak.svg';
+
+const install = 'npm install -g go-duck-cli';
 ---
 
-<section class="gd-hero" aria-labelledby="_top">
-  <div class="gd-hero__glow" aria-hidden="true"></div>
-  <div class="gd-hero__terrain" aria-hidden="true"></div>
-
-  <div class="gd-hero__grid">
-    <div class="gd-hero__copy">
-      <p class="gd-hero__kicker">Go microservice generator</p>
-      <h1 id="_top" data-page-title class="gd-hero__title">
-        GO-<span class="gd-hero__title-accent">DUCK</span>
-      </h1>
-      <p class="gd-hero__subtitle">GDL to Go microservices</p>
-      <p class="gd-hero__desc">
-        Scaffold Gin REST, Kratos gRPC, hybrid Postgres and MongoDB, and Keycloak from one GDL blueprint.
-      </p>
-      <div class="gd-hero__actions">
-        <a class="gd-btn gd-btn--primary" href="/getting-started/introduction/">
-          Get started
-          <span class="gd-btn__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="gd-btn gd-btn--ghost" href="/features/overview/">
-          <svg class="gd-btn__svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.17 2.06A13.1 13.1 0 0 0 19 1.87a12.94 12.94 0 0 0-7 2.05 12.94 12.94 0 0 0-7-2 13.1 13.1 0 0 0-2.17.19 1 1 0 0 0-.83 1v12a1 1 0 0 0 1.17 1 10.9 10.9 0 0 1 8.25 1.91l.12.07h.11a.91.91 0 0 0 .7 0h.11l.12-.07A10.899 10.899 0 0 1 20.83 16 1 1 0 0 0 22 15V3a1 1 0 0 0-.83-.94ZM11 15.35a12.87 12.87 0 0 0-6-1.48H4v-10c.333-.02.667-.02 1 0a10.86 10.86 0 0 1 6 1.8v9.68Zm9-1.44h-1a12.87 12.87 0 0 0-6 1.48V5.67a10.86 10.86 0 0 1 6-1.8c.333-.02.667-.02 1 0v10.04Z"/></svg>
-          Features
-        </a>
-        <a class="gd-btn gd-btn--ghost" href="/guides/cli/">
-          <svg class="gd-btn__svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 10h1a1 1 0 1 0 0-2H9a1 1 0 0 0 0 2Zm0 2a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2H9Zm11-3.06a1.3 1.3 0 0 0-.06-.27v-.09c-.05-.1-.11-.2-.19-.28l-6-6a1.07 1.07 0 0 0-.28-.19h-.09a.88.88 0 0 0-.33-.11H7a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8.94Zm-6-3.53L16.59 8H15a1 1 0 0 1-1-1V5.41ZM18 19a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5v3a3 3 0 0 0 3 3h3v9Z"/></svg>
-          CLI reference
-        </a>
-      </div>
-    </div>
-
-    <div class="gd-hero__visual">
-      <div class="gd-hero__mark" aria-hidden="true">
-        <svg viewBox="0 0 64 64" width="148" height="148" fill="none">
-          <ellipse cx="34" cy="40" rx="16" ry="12" fill="currentColor" opacity="0.2" />
-          <path d="M18 38c2-10 10-16 20-14 4 1 8 4 10 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
-          <path d="M46 30c6 1 10 5 11 9-6 1-10-1-12-4" fill="currentColor" />
-          <circle cx="28" cy="30" r="2.2" fill="currentColor" />
-          <path d="M22 46c4 6 14 8 22 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
-        </svg>
-      </div>
-      <div class="gd-terminal" role="img" aria-label="GO-DUCK CLI commands from the local CLI reference">
-        <div class="gd-terminal__chrome">
-          <span class="gd-terminal__dot gd-terminal__dot--r"></span>
-          <span class="gd-terminal__dot gd-terminal__dot--y"></span>
-          <span class="gd-terminal__dot gd-terminal__dot--g"></span>
-          <span class="gd-terminal__title">go-duck</span>
+<section class="gd-board" aria-labelledby="_top">
+  <div class="gd-board__inner">
+    <div class="gd-split">
+      <header class="gd-mast">
+        <p class="gd-pill">GO-DUCK</p>
+        <h1 id="_top" data-page-title class="gd-title">
+          From a GDL file to a<br /><span class="gd-title__accent">running service</span>
+        </h1>
+        <p class="gd-lede">
+          Scaffold Gin REST, Kratos gRPC, hybrid Postgres and MongoDB, and Keycloak from one blueprint.
+        </p>
+        <div class="gd-actions">
+          <a class="gd-rect gd-rect--fill" href="/getting-started/introduction/">
+            Get started
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="gd-rect gd-rect--line" href="/guides/cli/">CLI reference</a>
         </div>
-        <pre class="gd-terminal__body"><code><span class="gd-terminal__prompt">$</span> <span class="gd-terminal__cmd">npm install -g go-duck-cli</span>
-<span class="gd-terminal__prompt">$</span> <span class="gd-terminal__cmd">go-duck init</span>
-<span class="gd-terminal__prompt">$</span> <span class="gd-terminal__cmd">go-duck create -c config/config.yaml -g gdl -o .</span></code></pre>
+
+        <div class="gd-spec">
+          <span class="gd-spec__label">Install</span>
+          <span class="gd-spec__rule" aria-hidden="true"></span>
+          <code class="gd-spec__cmd">{install}</code>
+          <button type="button" class="gd-copy" data-copy={install}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2"></rect>
+              <path d="M4 16V6a2 2 0 0 1 2-2h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            </svg>
+            Copy
+          </button>
+        </div>
+      </header>
+
+      <div class="gd-stage" aria-hidden="true">
+        <svg class="gd-wires" viewBox="0 0 640 380" preserveAspectRatio="none">
+          <path d="M118 62 C 170 58, 200 78, 248 108" />
+          <path d="M470 108 C 520 78, 545 78, 575 96" />
+          <path d="M478 186 C 530 186, 548 186, 575 196" />
+          <path d="M468 268 C 520 292, 548 300, 575 296" />
+        </svg>
+
+        <div class="gd-gdl">
+          <strong>GDL</strong>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="gd-term">
+          <div class="gd-term__chrome">
+            <span class="gd-dot gd-dot--r"></span>
+            <span class="gd-dot gd-dot--y"></span>
+            <span class="gd-dot gd-dot--g"></span>
+            <span class="gd-term__title">go-duck</span>
+          </div>
+          <div class="gd-term__body">
+            <p><span class="gd-prompt">$</span> go-duck init</p>
+            <p><span class="gd-prompt">$</span> go-duck create -c config/config.yaml</p>
+            <ul>
+              <li><span class="gd-ok">✓</span><span>Project created</span><em>./my-app</em></li>
+              <li><span class="gd-ok">✓</span><span>Gin REST server</span><em>http://localhost:8080</em></li>
+              <li><span class="gd-ok">✓</span><span>Kratos gRPC server</span><em>http://localhost:9000</em></li>
+              <li><span class="gd-ok">✓</span><span>Postgres (hybrid)</span><em>configured</em></li>
+              <li><span class="gd-ok">✓</span><span>MongoDB (hybrid)</span><em>configured</em></li>
+              <li><span class="gd-ok">✓</span><span>Keycloak</span><em>ready</em></li>
+            </ul>
+            <p class="gd-ready"><span class="gd-ok">✓</span> Your service is ready!</p>
+          </div>
+        </div>
+
+        <ul class="gd-nodes">
+          <li>
+            <img class="gd-nodes__icon" src={postgresIcon.src} width="26" height="26" alt="" />
+            Postgres
+          </li>
+          <li>
+            <img class="gd-nodes__icon" src={mongodbIcon.src} width="22" height="22" alt="" />
+            MongoDB
+          </li>
+          <li>
+            <img class="gd-nodes__icon" src={keycloakIcon.src} width="22" height="22" alt="" />
+            Keycloak
+          </li>
+        </ul>
       </div>
     </div>
+
+    <ol class="gd-rail">
+      <li class="gd-step" style="--step:#6366f1">
+        <div class="gd-step__top">
+          <p class="gd-rail__step"><span>01</span> Blueprint</p>
+          <span class="gd-step__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.7"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.7"/></svg>
+          </span>
+        </div>
+        <p class="gd-rail__note">Entities, enums, and relationships. Relationship blocks sit outside the entity.</p>
+        <pre class="gd-rail__code"><code>entity Customer &#123;
+  string(100) fullName required
+  string(255) email unique
+&#125;</code></pre>
+      </li>
+      <li class="gd-step" style="--step:#7c3aed">
+        <div class="gd-step__top">
+          <p class="gd-rail__step"><span>02</span> Init</p>
+          <span class="gd-step__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 8 4 12l4 4M16 8l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+        <p class="gd-rail__note"><code>go-duck init</code> writes <code>config/config.yaml</code> and the folder layout.</p>
+        <pre class="gd-rail__code"><code>mkdir my-app &amp;&amp; cd my-app
+go-duck init</code></pre>
+      </li>
+      <li class="gd-step" style="--step:#0e7490">
+        <div class="gd-step__top">
+          <p class="gd-rail__step"><span>03</span> Generate</p>
+          <span class="gd-step__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+        <p class="gd-rail__note"><code>create</code> reads that config and a directory of <code>.gdl</code> files.</p>
+        <pre class="gd-rail__code"><code>go-duck create \
+  -c config/config.yaml \
+  -g gdl -o .</code></pre>
+      </li>
+      <li class="gd-step" style="--step:#e11d48">
+        <div class="gd-step__top">
+          <p class="gd-rail__step"><span>04</span> Run</p>
+          <span class="gd-step__icon gd-step__icon--play" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l12-7L8 5z"/></svg>
+          </span>
+        </div>
+        <p class="gd-rail__note">Compose starts dependencies. Gin listens on <code>:8080</code>, gRPC on <code>:9000</code>.</p>
+        <pre class="gd-rail__code"><code>docker-compose up -d
+go run main.go</code></pre>
+      </li>
+    </ol>
   </div>
 </section>
 
+<script>
+  document.querySelectorAll('.gd-copy').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const text = btn.getAttribute('data-copy') || '';
+      const label = btn.querySelector('span') ? btn.innerHTML : btn.innerHTML;
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.dataset.label = btn.dataset.label || btn.innerHTML;
+        btn.innerHTML = 'Copied';
+        setTimeout(() => {
+          btn.innerHTML = btn.dataset.label || label;
+        }, 1500);
+      } catch {
+        btn.textContent = 'Failed';
+      }
+    });
+  });
+</script>
+
 <style>
-  .gd-hero {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    margin-inline: 0;
-    margin-block: -1.5rem 0;
-    width: 100%;
-    padding: clamp(2.25rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3.5rem) clamp(3.25rem, 8vw, 5.5rem);
-    color: var(--gd-hero-fg, #f4f4f8);
-    background: var(--gd-hero-bg, #070714);
-    border-radius: 0;
-  }
-
-  .gd-hero__glow {
-    position: absolute;
-    inset: -20% 10% auto auto;
-    width: min(55vw, 28rem);
-    height: min(55vw, 28rem);
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.45), transparent 68%);
-    filter: blur(8px);
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  .gd-hero__terrain {
-    position: absolute;
-    inset: auto 0 0;
-    height: 38%;
-    z-index: -1;
-    pointer-events: none;
-    background:
-      radial-gradient(ellipse 120% 80% at 50% 120%, rgba(99, 102, 241, 0.4), transparent 55%),
-      linear-gradient(165deg, transparent 40%, var(--gd-hero-terrain-mid, #12081f) 70%, transparent 100%);
-    clip-path: polygon(0 55%, 8% 48%, 18% 58%, 28% 42%, 40% 52%, 52% 38%, 64% 50%, 76% 35%, 88% 48%, 100% 40%, 100% 100%, 0 100%);
-    opacity: 0.95;
-  }
-
-  .gd-hero__terrain::after {
-    content: '';
-    position: absolute;
-    left: 5%;
-    right: 5%;
-    bottom: 28%;
-    height: 3px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, transparent, #6366f1, #22d3ee, #a855f7, transparent);
-    box-shadow: 0 0 24px rgba(99, 102, 241, 0.75);
-  }
-
-  .gd-hero__grid {
-    display: grid;
-    gap: clamp(1.75rem, 4vw, 3.5rem);
-    align-items: center;
-    max-width: 92rem;
+  .gd-board {
+    box-sizing: border-box;
+    max-width: min(76rem, calc(100% - 2rem));
     margin-inline: auto;
+    margin-block: -1.5rem 0;
+    padding: clamp(1.25rem, 2.5vw, 2rem) clamp(1.25rem, 3vw, 2.5rem) clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--gd-ink);
   }
 
-  @media (min-width: 50rem) {
-    .gd-hero__grid {
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    }
+  .gd-board__inner {
+    width: 100%;
   }
 
-  .gd-hero__kicker {
-    margin: 0 0 0.4rem;
-    font-size: 0.78rem;
+  .gd-split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    align-items: center;
+  }
+
+  .gd-pill {
+    display: inline-flex;
+    margin: 0 0 0.85rem;
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    background: #ede9fe;
+    color: #6d28d9;
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--gd-hero-kicker, #a5b4fc);
+    letter-spacing: 0.12em;
   }
 
-  .gd-hero__title {
+  .gd-title {
     margin: 0;
-    font-size: clamp(2.75rem, 6vw, 4.25rem);
+    font-size: clamp(2rem, 3vw, 2.85rem);
     font-weight: 800;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.045em;
     line-height: 1.05;
-    color: var(--gd-hero-title, #fff);
+    color: var(--gd-ink);
   }
 
-  .gd-hero__title-accent {
-    background: linear-gradient(115deg, #c7d2fe 0%, #6366f1 42%, #e879f9 100%);
+  .gd-title__accent {
+    background: linear-gradient(100deg, #4f46e5 0%, #7c3aed 70%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
-  .gd-hero__subtitle {
-    margin: 0.85rem 0 0;
-    font-size: clamp(1.05rem, 2.2vw, 1.35rem);
-    font-weight: 650;
-    color: #0891b2;
-  }
-
-  :global(:root[data-theme='dark']) .gd-hero__subtitle {
-    color: #22d3ee;
-  }
-
-  .gd-hero__desc {
-    margin: 0.75rem 0 0;
+  .gd-lede {
+    margin: 0.9rem 0 0;
     max-width: 38ch;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     line-height: 1.5;
-    color: var(--gd-hero-muted, #a1a1b5);
+    color: var(--gd-muted);
   }
 
-  .gd-hero__actions {
+  .gd-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem 1.1rem;
-    align-items: center;
-    margin-top: 1.6rem;
+    gap: 0.65rem;
+    margin-top: 1.15rem;
   }
 
-  .gd-btn {
+  .gd-rect {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
+    padding: 0.62rem 1rem;
+    border-radius: 0.65rem;
+    font-size: 0.92rem;
+    font-weight: 650;
     text-decoration: none !important;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border-radius: 999px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
   }
 
-  .gd-btn--primary {
-    padding: 0.7rem 1.25rem;
+  .gd-rect--fill {
     color: #fff !important;
-    background: linear-gradient(105deg, #6366f1, #4f46e5 55%, #7c3aed);
-    box-shadow: 0 0 0 1px rgba(199, 210, 254, 0.35), 0 10px 30px rgba(99, 102, 241, 0.4);
+    background: linear-gradient(105deg, #6366f1, #7c3aed);
+    box-shadow: 0 10px 22px rgba(99, 102, 241, 0.28);
   }
 
-  .gd-btn--primary:hover {
-    transform: translateY(-1px);
+  .gd-rect--fill:hover {
+    filter: brightness(1.05);
   }
 
-  .gd-btn--ghost {
-    padding: 0.45rem 0.35rem;
-    color: var(--gd-hero-ghost, #d4d4e0) !important;
+  .gd-rect--line {
+    color: var(--gd-ink) !important;
+    background: var(--gd-cell);
+    box-shadow: inset 0 0 0 1px var(--gd-line), 0 6px 16px rgba(67, 56, 202, 0.05);
   }
 
-  .gd-btn--ghost:hover {
-    color: var(--gd-hero-ghost-hover, #fff) !important;
-  }
-
-  .gd-btn__svg {
-    flex-shrink: 0;
-    opacity: 0.85;
-  }
-
-  .gd-hero__visual {
+  .gd-spec {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.7rem 0.85rem;
+    margin-top: 1.15rem;
+    padding: 0.45rem 0.45rem 0.45rem 0.9rem;
+    border: 1px solid var(--gd-line);
+    border-radius: 0.75rem;
+    background: var(--gd-cell);
+    box-shadow: 0 10px 24px rgba(99, 102, 241, 0.08);
     position: relative;
-    display: grid;
-    place-items: center;
-    min-height: 16rem;
+    overflow: hidden;
   }
 
-  .gd-hero__mark {
+  .gd-spec::before {
+    content: '';
     position: absolute;
-    right: -2%;
-    top: 42%;
-    transform: translateY(-52%);
-    color: #818cf8;
-    opacity: 0.9;
-    filter: drop-shadow(0 0 28px rgba(99, 102, 241, 0.7));
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: linear-gradient(#6366f1, #7c3aed);
+  }
+
+  .gd-spec__label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6d28d9;
+  }
+
+  .gd-spec__rule {
+    width: 1px;
+    height: 1rem;
+    background: var(--gd-line);
+  }
+
+  .gd-spec__cmd {
+    flex: 1 1 10rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.84rem;
+    color: var(--gd-ink);
+    background: transparent;
+  }
+
+  .gd-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    border-radius: 0.55rem;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 650;
+    color: #fff;
+    background: linear-gradient(105deg, #6366f1, #7c3aed);
+  }
+
+  .gd-copy:hover {
+    filter: brightness(1.06);
+  }
+
+  .gd-stage {
+    position: relative;
+    min-height: 23.5rem;
+    border-radius: 1.25rem;
+  }
+
+  .gd-wires {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
   }
 
-  .gd-terminal {
-    position: relative;
+  .gd-wires path {
+    fill: none;
+    stroke: #c4b5fd;
+    stroke-width: 1.4;
+    stroke-dasharray: 4 5;
+    stroke-linecap: round;
+  }
+
+  .gd-gdl {
+    position: absolute;
+    z-index: 2;
+    top: -0.15rem;
+    left: 0;
+    width: 5.4rem;
+    padding: 0.7rem 0.7rem 0.85rem;
+    border-radius: 0.7rem;
+    background: #fff;
+    box-shadow: 0 14px 30px rgba(79, 70, 229, 0.12);
+    transform: rotate(-8deg);
+  }
+
+  .gd-gdl strong {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: #312e81;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+
+  .gd-gdl span {
+    display: block;
+    height: 0.28rem;
+    margin-top: 0.32rem;
+    border-radius: 999px;
+    background: #e0e7ff;
+  }
+
+  .gd-gdl span:nth-of-type(2) { width: 78%; }
+  .gd-gdl span:nth-of-type(3) { width: 55%; }
+
+  .gd-term {
+    position: absolute;
     z-index: 1;
-    width: min(100%, 34rem);
+    top: 2.9rem;
+    left: 3.6rem;
+    right: 9rem;
     border-radius: 0.9rem;
-    background: var(--gd-hero-terminal-bg, rgba(12, 12, 20, 0.92));
-    border: 1px solid var(--gd-hero-terminal-border, rgba(99, 102, 241, 0.55));
+    background: #16181f;
     box-shadow:
-      0 0 0 1px rgba(34, 211, 238, 0.12),
-      0 0 40px rgba(99, 102, 241, 0.28),
-      0 24px 48px rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(8px);
+      0 24px 50px rgba(79, 70, 229, 0.18),
+      0 2px 0 rgba(255, 255, 255, 0.04) inset;
+    overflow: hidden;
   }
 
-  @media (max-width: 49.99rem) {
-    .gd-hero__mark {
-      right: 0;
-      width: 6.5rem;
-      opacity: 0.45;
-    }
-  }
-
-  .gd-terminal__chrome {
-    display: flex;
+  .gd-term__chrome {
+    display: grid;
+    grid-template-columns: auto auto auto 1fr;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.65rem 0.85rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    gap: 0.35rem;
+    padding: 0.55rem 0.75rem;
+    background: #1e212b;
   }
 
-  .gd-terminal__dot {
+  .gd-dot {
     width: 0.55rem;
     height: 0.55rem;
     border-radius: 50%;
   }
-  .gd-terminal__dot--r { background: #ff5f57; }
-  .gd-terminal__dot--y { background: #febc2e; }
-  .gd-terminal__dot--g { background: #28c840; }
+  .gd-dot--r { background: #ff5f57; }
+  .gd-dot--y { background: #febc2e; }
+  .gd-dot--g { background: #28c840; }
 
-  .gd-terminal__title {
-    margin-left: 0.5rem;
-    font-size: 0.7rem;
-    color: #6b7280;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+  .gd-term__title {
+    justify-self: center;
+    margin-right: 2.2rem;
+    color: #9aa0b4;
+    font-size: 0.72rem;
   }
 
-  .gd-terminal__body {
-    margin: 0;
-    padding: 1rem 1.1rem 1.2rem;
+  .gd-term__body {
+    padding: 0.85rem 0.95rem 0.95rem;
+    color: #e7e9f4;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.78rem;
-    line-height: 1.65;
-    color: #e5e7eb;
-    white-space: pre-wrap;
+    font-size: 0.72rem;
+    line-height: 1.55;
   }
 
-  .gd-terminal__prompt { color: #a5b4fc; }
-  .gd-terminal__cmd { color: #e879f9; }
+  .gd-term__body p {
+    margin: 0;
+  }
+
+  .gd-prompt {
+    color: #a78bfa;
+    margin-right: 0.35rem;
+  }
+
+  .gd-term__body ul {
+    margin: 0.55rem 0 0.35rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gd-term__body li {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.45rem;
+    align-items: baseline;
+  }
+
+  .gd-ok {
+    color: #34d399;
+    font-weight: 700;
+  }
+
+  .gd-term__body em {
+    color: #9aa3b8;
+    font-style: normal;
+  }
+
+  .gd-ready {
+    margin-top: 0.35rem !important;
+    color: #34d399;
+    font-weight: 700;
+  }
+
+  .gd-nodes {
+    position: absolute;
+    z-index: 2;
+    top: 2.5rem;
+    bottom: 1.6rem;
+    right: 0;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .gd-nodes li {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-width: 7.4rem;
+    padding: 0.4rem 0.65rem 0.4rem 0.4rem;
+    border-radius: 0.75rem;
+    background: #fff;
+    color: #1f2430;
+    font-size: 0.78rem;
+    font-weight: 650;
+    box-shadow: 0 10px 24px rgba(79, 70, 229, 0.1);
+  }
+
+  .gd-nodes__icon {
+    width: 1.45rem;
+    height: 1.45rem;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .gd-rail {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gd-step {
+    min-width: 0;
+    padding: 0.9rem 0.9rem 0.85rem;
+    border: 1px solid color-mix(in srgb, var(--step) 16%, var(--gd-line));
+    border-radius: 0.9rem;
+    background: var(--gd-cell);
+    box-shadow: 0 12px 28px rgba(79, 70, 229, 0.06);
+  }
+
+  .gd-step__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .gd-rail__step {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    color: var(--gd-ink);
+  }
+
+  .gd-rail__step span {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--step);
+  }
+
+  .gd-step__icon {
+    display: grid;
+    place-items: center;
+    color: #94a3b8;
+  }
+
+  .gd-step__icon--play {
+    width: 1.55rem;
+    height: 1.55rem;
+    border-radius: 50%;
+    color: #fff;
+    background: #fb7185;
+  }
+
+  .gd-rail__note {
+    margin: 0.4rem 0 0.7rem;
+    min-height: 3.5em;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    color: var(--gd-muted);
+  }
+
+  .gd-rail__note :global(code) {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.78em;
+    font-weight: 600;
+    color: var(--gd-ink);
+    background: transparent;
+    padding: 0;
+  }
+
+  .gd-rail__code {
+    margin: 0;
+    padding: 0.7rem 0.75rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.68rem;
+    line-height: 1.55;
+    color: #e8eaf3;
+    background: #16181f;
+    border-radius: 0.55rem;
+  }
+
+  .gd-rail__code code {
+    font-family: inherit;
+    background: transparent;
+    padding: 0;
+  }
+
+  :global(:root[data-theme='dark']) .gd-pill {
+    background: #2e1065;
+    color: #ddd6fe;
+  }
+
+  :global(:root[data-theme='dark']) .gd-gdl,
+  :global(:root[data-theme='dark']) .gd-nodes li {
+    background: #1c2030;
+    color: #f2f3f7;
+  }
+
+  :global(:root[data-theme='dark']) .gd-gdl strong {
+    color: #ddd6fe;
+  }
+
+  @media (max-width: 68rem) {
+    .gd-split {
+      grid-template-columns: 1fr;
+    }
+
+    .gd-title {
+      max-width: 18ch;
+    }
+
+    .gd-stage {
+      min-height: 24rem;
+    }
+  }
+
+  @media (max-width: 64rem) {
+    .gd-rail {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .gd-rail__note {
+      min-height: 0;
+    }
+  }
+
+  @media (max-width: 40rem) {
+    .gd-rail,
+    .gd-term {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+    }
+
+    .gd-stage {
+      min-height: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .gd-wires,
+    .gd-gdl,
+    .gd-nodes {
+      display: none;
+    }
+
+    .gd-rail {
+      grid-template-columns: 1fr;
+    }
+
+    .gd-title {
+      max-width: none;
+    }
+  }
 </style>

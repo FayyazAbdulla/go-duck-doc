@@ -3,7 +3,7 @@ title: GO-DUCK
 description: Generate Go microservices from GDL — Gin REST, Kratos gRPC, hybrid persistence, and Keycloak.
 template: splash
 hero:
-  tagline: GDL to Go microservices
+  tagline: From a GDL file to a running service
   actions:
     - text: Get started
       link: /getting-started/introduction/
@@ -11,30 +11,6 @@ hero:
       variant: primary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
-import InstallBar from '../../components/InstallBar.astro';
+import HomeIndex from '../../components/HomeIndex.astro';
 
-## What you get
-
-<CardGrid stagger>
-  <Card title="Hybrid-Store" icon="rocket">
-    PostgreSQL and MongoDB in one service. `@isDocument` flips an entity to MongoDB; `relationship` blocks cross the two engines.
-  </Card>
-  <Card title="Dual protocol" icon="puzzle">
-    Gin REST and Kratos gRPC from the same GDL, with tenant routing on both.
-  </Card>
-  <Card title="DuckGuard ACL" icon="seti:lock">
-    In-process access matrix of endpoint, method, realm role, and identity, plus a simulate endpoint.
-  </Card>
-  <Card title="Strait of Duck Gateway" icon="random">
-    `go-duck create-gateway` discovers `goduck.io/managed=true` services and reverse-proxies them. The proxy does not authenticate.
-  </Card>
-  <Card title="Triple-Identity" icon="approve-check">
-    Realm role, opaque `X-Tenant-ID`, and the physical database name stay decoupled. Hide silo names with `multitenancy.hide-silo-names`.
-  </Card>
-  <Card title="Outbox saga" icon="list">
-    `@Federated` writes enqueue `distributed_outbox` rows in the same transaction. A worker polls every 10 seconds.
-  </Card>
-</CardGrid>
-
-<InstallBar />
+<HomeIndex />

@@ -1,0 +1,134 @@
+---
+const groups = [
+  {
+    title: 'Blueprint',
+    tone: '#6366f1',
+    links: [
+      { href: '/gdl/getting-started/', label: 'GDL getting started', note: 'Entities, enums, and relationships.' },
+      { href: '/gdl/entities/', label: 'Entities and fields', note: 'Types, required, unique, and default.' },
+      { href: '/gdl/relationships/', label: 'Relationships', note: 'OneToMany, ManyToOne, OneToOne, ManyToMany.' },
+      { href: '/gdl/annotations/', label: 'Annotations', note: 'Federated, Searchable, isDocument, and the rest.' },
+    ],
+  },
+  {
+    title: 'Generate',
+    tone: '#a855f7',
+    links: [
+      { href: '/getting-started/install/', label: 'Install', note: 'npm install -g go-duck-cli, then init and create.' },
+      { href: '/guides/cli/', label: 'CLI', note: 'init, create, import-gdl, validate-gdl, create-gateway.' },
+      { href: '/guides/configuration/', label: 'Configuration', note: 'The config.yaml shapes the generator reads.' },
+      { href: '/guides/wizard/', label: 'Wizard', note: 'Browser form that writes a config file.' },
+    ],
+  },
+  {
+    title: 'Runtime',
+    tone: '#0891b2',
+    links: [
+      { href: '/features/rest/', label: 'REST', note: 'Gin routes generated from the blueprint.' },
+      { href: '/features/grpc/', label: 'gRPC', note: 'Kratos service on port 9000.' },
+      { href: '/features/gateway/', label: 'Gateway', note: 'Strait of Duck discovers managed services.' },
+      { href: '/features/hybrid-store/', label: 'Hybrid-Store', note: 'PostgreSQL and MongoDB in one service.' },
+      { href: '/features/multitenancy/', label: 'Multitenancy', note: 'Realm role, X-Tenant-ID, and the database name.' },
+      { href: '/infra/keycloak/', label: 'Keycloak', note: 'Realm roles on the generated service.' },
+    ],
+  },
+];
+---
+
+<section class="gd-map" aria-labelledby="gd-map-title">
+  <h2 id="gd-map-title">Documentation map</h2>
+  <div class="gd-map__cols">
+    {
+      groups.map((group) => (
+        <div class="gd-map__col" style={`--tone:${group.tone}`}>
+          <h3>{group.title}</h3>
+          <ul>
+            {group.links.map((link) => (
+              <li>
+                <a class="gd-map__link" href={link.href}>
+                  {link.label}
+                </a>
+                <span>{link.note}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .gd-map {
+    margin: 0 0 clamp(3rem, 6vw, 4.5rem);
+    padding-top: 0.25rem;
+  }
+
+  .gd-map h2 {
+    margin: 0 0 1.25rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gd-accent);
+  }
+
+  .gd-map__cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .gd-map__col {
+    padding: 0.95rem 0.95rem 0.4rem;
+    border: 1px solid color-mix(in srgb, var(--tone) 30%, var(--gd-line));
+    border-radius: 0.8rem;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--tone) 10%, var(--gd-cell)), var(--gd-cell) 38%);
+    box-shadow: 0 12px 26px rgba(67, 56, 202, 0.06);
+  }
+
+  .gd-map h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--tone);
+  }
+
+  .gd-map ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gd-map li {
+    padding: 0.55rem 0;
+    border-top: 1px solid color-mix(in srgb, var(--tone) 18%, var(--gd-line));
+  }
+
+  .gd-map__link {
+    display: inline-block;
+    color: var(--gd-ink);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .gd-map__link:hover {
+    color: var(--gd-accent);
+  }
+
+  .gd-map li span {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.86rem;
+    line-height: 1.4;
+    color: var(--gd-muted);
+  }
+
+  @media (max-width: 40rem) {
+    .gd-map__cols {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+  }
+</style>
