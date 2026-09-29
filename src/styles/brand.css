@@ -1,0 +1,224 @@
+/*
+  GO-DUCK docs brand.
+  Accent #6366f1 from Website CSS gradient-text (#6366f1, #a855f7, #ec4899).
+  Light / dark / auto follow Starlight's data-theme. Splash is not forced dark.
+*/
+
+:root {
+  --gd-brand: #6366f1;
+  --gd-brand-soft: #a5b4fc;
+  --gd-brand-deep: #4338ca;
+  --sl-color-accent-low: #1e1b4b;
+  --sl-color-accent: var(--gd-brand);
+  --sl-color-accent-high: #c7d2fe;
+  --sl-font: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+:root[data-theme='light'] {
+  --sl-color-accent-low: #eef2ff;
+  --sl-color-accent: var(--gd-brand);
+  --sl-color-accent-high: var(--gd-brand-deep);
+  --sl-color-text-accent: var(--gd-brand-deep);
+}
+
+:root[data-theme='dark'] {
+  --sl-color-bg: #070714;
+  --sl-color-bg-nav: #0c0c18;
+  --sl-color-bg-sidebar: #0a0a14;
+  --sl-color-hairline: #1e1b33;
+  --sl-color-text-accent: var(--gd-brand-soft);
+}
+
+html[data-has-hero] {
+  --sl-content-width: min(92rem, calc(100vw - 2rem));
+  --sl-content-margin-inline: 0;
+}
+
+html[data-has-hero] .content-panel {
+  padding-inline: 0;
+  max-width: none;
+}
+
+html[data-has-hero] .content-panel > .sl-container {
+  max-width: none;
+  width: 100%;
+  margin-inline: 0;
+}
+
+html[data-has-hero] .sl-markdown-content {
+  max-width: min(92rem, calc(100% - 2rem));
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3.5rem);
+  box-sizing: border-box;
+}
+
+html[data-has-hero] .gd-install {
+  margin-inline: auto;
+}
+
+:root[data-theme='dark'] [data-has-hero] .main-pane,
+:root[data-theme='dark'] [data-has-hero] .content-panel {
+  background: transparent;
+}
+
+:root[data-theme='dark'] [data-has-hero] .sl-markdown-content h2 {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+:root[data-theme='dark'] [data-has-hero] .card {
+  background: rgba(16, 16, 32, 0.92);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 0.9rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-theme='dark'] [data-has-hero] .card:hover {
+  border-color: rgba(165, 180, 252, 0.55);
+}
+
+:root[data-theme='dark'] [data-has-hero] .card .title {
+  color: #f4f4f8;
+}
+
+:root[data-theme='dark'] .gd-install {
+  background: rgba(12, 12, 24, 0.95);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  box-shadow:
+    0 0 0 1px rgba(34, 211, 238, 0.08),
+    0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme='dark'] .gd-install__cmd {
+  color: #e5e7eb;
+}
+
+:root[data-theme='light'] [data-has-hero] .sl-markdown-content h2 {
+  color: #14141f;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+:root[data-theme='light'] [data-has-hero] .card {
+  background: #fff;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 0.9rem;
+  box-shadow: 0 10px 28px rgba(67, 56, 202, 0.08);
+}
+
+:root[data-theme='light'] [data-has-hero] .card:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+}
+
+:root[data-theme='light'] [data-has-hero] .card .title {
+  color: #14141f;
+}
+
+:root[data-theme='light'] .gd-install {
+  background: #fff;
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  box-shadow: 0 12px 32px rgba(67, 56, 202, 0.1);
+}
+
+:root[data-theme='light'] .gd-install__cmd {
+  color: #1f2937;
+}
+
+.gd-install {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem 0.85rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: 2.75rem auto 1rem;
+  padding: 0.7rem 0.85rem 0.7rem 1.15rem;
+  border-radius: 999px;
+}
+
+.gd-install__cmd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  background: transparent;
+  padding: 0;
+  border: 0;
+}
+
+.gd-install__or {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: lowercase;
+}
+
+.gd-install__copy {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(105deg, #6366f1, #4f46e5);
+}
+
+.gd-install__copy:hover {
+  filter: brightness(1.08);
+}
+
+@media (max-width: 40rem) {
+  .gd-install {
+    border-radius: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
+
+.gd-hero {
+  --gd-hero-bg: #070714;
+  --gd-hero-fg: #f4f4f8;
+  --gd-hero-muted: #a1a1b5;
+  --gd-hero-ghost: #d4d4e0;
+  --gd-hero-ghost-hover: #fff;
+  --gd-hero-title: #fff;
+  --gd-hero-kicker: #a5b4fc;
+  --gd-hero-terminal-bg: rgba(12, 12, 24, 0.92);
+  --gd-hero-terminal-border: rgba(99, 102, 241, 0.55);
+  --gd-hero-terrain-mid: #1e1b4b;
+}
+
+:root[data-theme='light'] .gd-hero {
+  --gd-hero-bg: linear-gradient(165deg, #eef2ff 0%, #f5f3ff 45%, #f8fafc 100%);
+  --gd-hero-fg: #14141f;
+  --gd-hero-muted: #4b5563;
+  --gd-hero-ghost: #374151;
+  --gd-hero-ghost-hover: #111827;
+  --gd-hero-title: #14141f;
+  --gd-hero-kicker: #4338ca;
+  --gd-hero-terminal-bg: rgba(15, 15, 28, 0.94);
+  --gd-hero-terminal-border: rgba(99, 102, 241, 0.45);
+  --gd-hero-terrain-mid: #ddd6fe;
+}
+
+.sl-markdown-content a:not(.sl-link-button):not(.gd-btn) {
+  color: var(--sl-color-text-accent);
+  text-underline-offset: 0.18em;
+}
+
+.sl-markdown-content code {
+  border-radius: 0.35rem;
+}
+
+.site-title img {
+  height: 2.25rem;
+  width: auto;
+  max-width: 11rem;
+  object-fit: contain;
+}
+
+.starlight-aside {
+  border-radius: 0.75rem;
+}

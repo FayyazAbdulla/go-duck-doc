@@ -1,0 +1,293 @@
+---
+/**
+ * Full-bleed GO-DUCK splash. Registered via starlight.components.Hero.
+ * Theme colors come from brand.css (:root[data-theme='light'|'dark']).
+ */
+---
+
+<section class="gd-hero" aria-labelledby="_top">
+  <div class="gd-hero__glow" aria-hidden="true"></div>
+  <div class="gd-hero__terrain" aria-hidden="true"></div>
+
+  <div class="gd-hero__grid">
+    <div class="gd-hero__copy">
+      <p class="gd-hero__kicker">Go microservice generator</p>
+      <h1 id="_top" data-page-title class="gd-hero__title">
+        GO-<span class="gd-hero__title-accent">DUCK</span>
+      </h1>
+      <p class="gd-hero__subtitle">GDL to Go microservices</p>
+      <p class="gd-hero__desc">
+        Scaffold Gin REST, Kratos gRPC, hybrid Postgres and MongoDB, and Keycloak from one GDL blueprint.
+      </p>
+      <div class="gd-hero__actions">
+        <a class="gd-btn gd-btn--primary" href="/getting-started/introduction/">
+          Get started
+          <span class="gd-btn__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="gd-btn gd-btn--ghost" href="/features/overview/">
+          <svg class="gd-btn__svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.17 2.06A13.1 13.1 0 0 0 19 1.87a12.94 12.94 0 0 0-7 2.05 12.94 12.94 0 0 0-7-2 13.1 13.1 0 0 0-2.17.19 1 1 0 0 0-.83 1v12a1 1 0 0 0 1.17 1 10.9 10.9 0 0 1 8.25 1.91l.12.07h.11a.91.91 0 0 0 .7 0h.11l.12-.07A10.899 10.899 0 0 1 20.83 16 1 1 0 0 0 22 15V3a1 1 0 0 0-.83-.94ZM11 15.35a12.87 12.87 0 0 0-6-1.48H4v-10c.333-.02.667-.02 1 0a10.86 10.86 0 0 1 6 1.8v9.68Zm9-1.44h-1a12.87 12.87 0 0 0-6 1.48V5.67a10.86 10.86 0 0 1 6-1.8c.333-.02.667-.02 1 0v10.04Z"/></svg>
+          Features
+        </a>
+        <a class="gd-btn gd-btn--ghost" href="/guides/cli/">
+          <svg class="gd-btn__svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 10h1a1 1 0 1 0 0-2H9a1 1 0 0 0 0 2Zm0 2a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2H9Zm11-3.06a1.3 1.3 0 0 0-.06-.27v-.09c-.05-.1-.11-.2-.19-.28l-6-6a1.07 1.07 0 0 0-.28-.19h-.09a.88.88 0 0 0-.33-.11H7a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8.94Zm-6-3.53L16.59 8H15a1 1 0 0 1-1-1V5.41ZM18 19a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5v3a3 3 0 0 0 3 3h3v9Z"/></svg>
+          CLI reference
+        </a>
+      </div>
+    </div>
+
+    <div class="gd-hero__visual">
+      <div class="gd-hero__mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="148" height="148" fill="none">
+          <ellipse cx="34" cy="40" rx="16" ry="12" fill="currentColor" opacity="0.2" />
+          <path d="M18 38c2-10 10-16 20-14 4 1 8 4 10 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+          <path d="M46 30c6 1 10 5 11 9-6 1-10-1-12-4" fill="currentColor" />
+          <circle cx="28" cy="30" r="2.2" fill="currentColor" />
+          <path d="M22 46c4 6 14 8 22 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+        </svg>
+      </div>
+      <div class="gd-terminal" role="img" aria-label="GO-DUCK CLI commands from the local CLI reference">
+        <div class="gd-terminal__chrome">
+          <span class="gd-terminal__dot gd-terminal__dot--r"></span>
+          <span class="gd-terminal__dot gd-terminal__dot--y"></span>
+          <span class="gd-terminal__dot gd-terminal__dot--g"></span>
+          <span class="gd-terminal__title">go-duck</span>
+        </div>
+        <pre class="gd-terminal__body"><code><span class="gd-terminal__prompt">$</span> <span class="gd-terminal__cmd">npm install -g go-duck-cli</span>
+<span class="gd-terminal__prompt">$</span> <span class="gd-terminal__cmd">go-duck init</span>
+<span class="gd-terminal__prompt">$</span> <span class="gd-terminal__cmd">go-duck create -c config/config.yaml -g gdl -o .</span></code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gd-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    margin-inline: 0;
+    margin-block: -1.5rem 0;
+    width: 100%;
+    padding: clamp(2.25rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3.5rem) clamp(3.25rem, 8vw, 5.5rem);
+    color: var(--gd-hero-fg, #f4f4f8);
+    background: var(--gd-hero-bg, #070714);
+    border-radius: 0;
+  }
+
+  .gd-hero__glow {
+    position: absolute;
+    inset: -20% 10% auto auto;
+    width: min(55vw, 28rem);
+    height: min(55vw, 28rem);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.45), transparent 68%);
+    filter: blur(8px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .gd-hero__terrain {
+    position: absolute;
+    inset: auto 0 0;
+    height: 38%;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 120%, rgba(99, 102, 241, 0.4), transparent 55%),
+      linear-gradient(165deg, transparent 40%, var(--gd-hero-terrain-mid, #12081f) 70%, transparent 100%);
+    clip-path: polygon(0 55%, 8% 48%, 18% 58%, 28% 42%, 40% 52%, 52% 38%, 64% 50%, 76% 35%, 88% 48%, 100% 40%, 100% 100%, 0 100%);
+    opacity: 0.95;
+  }
+
+  .gd-hero__terrain::after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 28%;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, #6366f1, #22d3ee, #a855f7, transparent);
+    box-shadow: 0 0 24px rgba(99, 102, 241, 0.75);
+  }
+
+  .gd-hero__grid {
+    display: grid;
+    gap: clamp(1.75rem, 4vw, 3.5rem);
+    align-items: center;
+    max-width: 92rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 50rem) {
+    .gd-hero__grid {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    }
+  }
+
+  .gd-hero__kicker {
+    margin: 0 0 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gd-hero-kicker, #a5b4fc);
+  }
+
+  .gd-hero__title {
+    margin: 0;
+    font-size: clamp(2.75rem, 6vw, 4.25rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--gd-hero-title, #fff);
+  }
+
+  .gd-hero__title-accent {
+    background: linear-gradient(115deg, #c7d2fe 0%, #6366f1 42%, #e879f9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gd-hero__subtitle {
+    margin: 0.85rem 0 0;
+    font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+    font-weight: 650;
+    color: #0891b2;
+  }
+
+  :global(:root[data-theme='dark']) .gd-hero__subtitle {
+    color: #22d3ee;
+  }
+
+  .gd-hero__desc {
+    margin: 0.75rem 0 0;
+    max-width: 38ch;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--gd-hero-muted, #a1a1b5);
+  }
+
+  .gd-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.1rem;
+    align-items: center;
+    margin-top: 1.6rem;
+  }
+
+  .gd-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+  }
+
+  .gd-btn--primary {
+    padding: 0.7rem 1.25rem;
+    color: #fff !important;
+    background: linear-gradient(105deg, #6366f1, #4f46e5 55%, #7c3aed);
+    box-shadow: 0 0 0 1px rgba(199, 210, 254, 0.35), 0 10px 30px rgba(99, 102, 241, 0.4);
+  }
+
+  .gd-btn--primary:hover {
+    transform: translateY(-1px);
+  }
+
+  .gd-btn--ghost {
+    padding: 0.45rem 0.35rem;
+    color: var(--gd-hero-ghost, #d4d4e0) !important;
+  }
+
+  .gd-btn--ghost:hover {
+    color: var(--gd-hero-ghost-hover, #fff) !important;
+  }
+
+  .gd-btn__svg {
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+
+  .gd-hero__visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 16rem;
+  }
+
+  .gd-hero__mark {
+    position: absolute;
+    right: -2%;
+    top: 42%;
+    transform: translateY(-52%);
+    color: #818cf8;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 28px rgba(99, 102, 241, 0.7));
+    pointer-events: none;
+  }
+
+  .gd-terminal {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 34rem);
+    border-radius: 0.9rem;
+    background: var(--gd-hero-terminal-bg, rgba(12, 12, 20, 0.92));
+    border: 1px solid var(--gd-hero-terminal-border, rgba(99, 102, 241, 0.55));
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 238, 0.12),
+      0 0 40px rgba(99, 102, 241, 0.28),
+      0 24px 48px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+  }
+
+  @media (max-width: 49.99rem) {
+    .gd-hero__mark {
+      right: 0;
+      width: 6.5rem;
+      opacity: 0.45;
+    }
+  }
+
+  .gd-terminal__chrome {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.65rem 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .gd-terminal__dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+  }
+  .gd-terminal__dot--r { background: #ff5f57; }
+  .gd-terminal__dot--y { background: #febc2e; }
+  .gd-terminal__dot--g { background: #28c840; }
+
+  .gd-terminal__title {
+    margin-left: 0.5rem;
+    font-size: 0.7rem;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .gd-terminal__body {
+    margin: 0;
+    padding: 1rem 1.1rem 1.2rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.78rem;
+    line-height: 1.65;
+    color: #e5e7eb;
+    white-space: pre-wrap;
+  }
+
+  .gd-terminal__prompt { color: #a5b4fc; }
+  .gd-terminal__cmd { color: #e879f9; }
+</style>

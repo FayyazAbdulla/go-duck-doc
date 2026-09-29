@@ -1,0 +1,30 @@
+---
+const cmd = 'npm install -g go-duck-cli';
+const alt = 'go-duck create -c config/config.yaml -g gdl -o .';
+---
+
+<div class="gd-install" id="gd-install">
+  <code class="gd-install__cmd">$ {cmd}</code>
+  <span class="gd-install__or">or</span>
+  <code class="gd-install__cmd">{alt}</code>
+  <button type="button" class="gd-install__copy" data-copy={cmd} aria-label="Copy create command">
+    Copy
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll('.gd-install__copy').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const text = btn.getAttribute('data-copy') || '';
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = 'Copied';
+        setTimeout(() => {
+          btn.textContent = 'Copy';
+        }, 1500);
+      } catch {
+        btn.textContent = 'Failed';
+      }
+    });
+  });
+</script>
